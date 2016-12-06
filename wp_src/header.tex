@@ -1,0 +1,76 @@
+\documentclass[9pt,oneside,reqno]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{multicol}
+%\usepackage{natbib}
+\usepackage{float}
+\usepackage[a4paper,width=170mm,top=18mm,bottom=22mm,includeheadfoot]{geometry}
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor={blue!50!black},citecolor={blue!50!black},urlcolor={blue!80!black}]{hyperref}
+\usepackage{mathtools} % For the Ceil and Floor functions
+\usepackage{siunitx}
+%\setlength{\parindent}{0pt} % Remove paragraph indentation
+\usepackage{lineno}
+
+% Custom Ceil and Floor Commands
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+% Change section headings
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}%
+\z@{1.5\linespacing\@plus\linespacing}{\linespacing}%
+{\normalfont\Large\scshape\centering}}
+\renewcommand\subsection{\@startsection{subsection}{2}%
+\z@{1.5\linespacing}{.5\linespacing}%
+{\normalfont\scshape\centering\large}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}%
+\z@{.5\linespacing\@plus.7\linespacing}{0.5\linespacing}%
+{\normalfont\scshape\centering}}
+\makeatother
+
+% Drafting Tools
+%\linenumbers
+%\usepackage{draftwatermark}
+%\SetWatermarkText{DRAFT}
+%\SetWatermarkScale{8}
+%\SetWatermarkColor[rgb]{1,0.8,0.8}
+
+
+\captionsetup{width=\columnwidth}
+
+% ======================
+% Insert TODO boxes, turn them on or off
+% ======================
+
+\newif\ifstatus
+\statustrue
+%\statusfalse
+
+\newcommand{\todo}[1]{%
+\ifstatus
+  \begin{center}%
+    \fbox{%
+      \begin{minipage}{0.95\columnwidth}\small
+        \textbf{TODO:} #1
+      \end{minipage}%
+    }
+  \end{center}
+\fi
+}
+
+
+% ======================
+% make things a bit prettier with microtype...
+% ======================
+
+\usepackage{microtype}
+\microtypesetup{expansion=alltext,step=1} % hence we can activate expansion ...
+\tolerance=300         % ... and make TeX almost as intolerant as it normally is
+
+% ======================
